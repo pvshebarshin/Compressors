@@ -1,0 +1,3 @@
+C:/Institute/algo/KDZ/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Institute/algo/KDZ/cmake-build-debug/CMakeFiles/KDZ.dir
+C:/Institute/algo/KDZ/cmake-build-debug/CMakeFiles/rebuild_cache.dir
