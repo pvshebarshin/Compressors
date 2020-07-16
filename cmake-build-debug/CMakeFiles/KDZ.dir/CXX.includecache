@@ -6,7 +6,11 @@
 
 #IncludeRegexTransform: 
 
-C:/Institute/algo/KDZ/Huffman.h
+C:/Projects/Compression/Compressors/Huffman.cpp
+Huffman.h
+C:/Projects/Compression/Compressors/Huffman.h
+
+C:/Projects/Compression/Compressors/Huffman.h
 iostream
 -
 fstream
@@ -14,15 +18,29 @@ fstream
 vector
 -
 
-C:/Institute/algo/KDZ/LZ77.h
+C:/Projects/Compression/Compressors/LZ77.cpp
+LZ77.h
+C:/Projects/Compression/Compressors/LZ77.h
+
+C:/Projects/Compression/Compressors/LZ77.h
 vector
 -
 
-C:/Institute/algo/KDZ/ShannonFano.h
+C:/Projects/Compression/Compressors/LZW.h
+map
+-
+fstream
+-
+
+C:/Projects/Compression/Compressors/ShannonFano.cpp
+ShannonFano.h
+C:/Projects/Compression/Compressors/ShannonFano.h
+
+C:/Projects/Compression/Compressors/ShannonFano.h
 vector
 -
 
-C:/Institute/algo/KDZ/main.cpp
+C:/Projects/Compression/Compressors/main.cpp
 iostream
 -
 fstream
@@ -39,10 +57,14 @@ bitset
 -
 chrono
 -
-ShannonFano.h
-C:/Institute/algo/KDZ/ShannonFano.h
-LZ77.h
-C:/Institute/algo/KDZ/LZ77.h
-Huffman.h
-C:/Institute/algo/KDZ/Huffman.h
+ShannonFano.cpp
+C:/Projects/Compression/Compressors/ShannonFano.cpp
+LZ77.cpp
+C:/Projects/Compression/Compressors/LZ77.cpp
+thread
+-
+LZW.h
+C:/Projects/Compression/Compressors/LZW.h
+Huffman.cpp
+C:/Projects/Compression/Compressors/Huffman.cpp
 

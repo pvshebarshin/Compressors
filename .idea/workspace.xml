@@ -11,8 +11,150 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14633bbf-3b07-438b-8803-496e7112c888" name="Default Changelist" comment="" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <list default="true" id="14633bbf-3b07-438b-8803-496e7112c888" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Huffman.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LZ77.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LZW.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LZW.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/7.huff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/7.lz7710" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/7.lz7720" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/7.lz775" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/7.shan" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.16.5/CMakeCCompiler.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.16.5/CMakeCXXCompiler.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.16.5/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.16.5/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.16.5/CMakeRCCompiler.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.16.5/CMakeSystem.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.16.5/CompilerIdC/CMakeCCompilerId.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.16.5/CompilerIdC/a.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.16.5/CompilerIdCXX/CMakeCXXCompilerId.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.16.5/CompilerIdCXX/a.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/Compressors.cbp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/DATA/7.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/RESULTH/7.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/RESULTLZ7710/7.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/RESULTLZ7720/7.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/RESULTLZ775/7.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/RESULTSHF/11.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/RESULTSHF/7.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/output7.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Huffman.h" beforeDir="false" afterPath="$PROJECT_DIR$/Huffman.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LZ77.h" beforeDir="false" afterPath="$PROJECT_DIR$/LZ77.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShannonFano.h" beforeDir="false" afterPath="$PROJECT_DIR$/ShannonFano.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/1.huff" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/1.huff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/1.lz7710" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/1.lz7710" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/1.lz7720" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/1.lz7720" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/1.lz775" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/1.lz775" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/1.shan" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/1.shan" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/2.huff" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/2.huff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/2.lz7710" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/2.lz7710" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/2.lz7720" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/2.lz7720" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/2.lz775" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/2.lz775" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/2.shan" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/2.shan" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/3.huff" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/3.huff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/3.lz7710" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/3.lz7710" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/3.lz7720" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/3.lz7720" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/3.lz775" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/3.lz775" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/3.shan" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/3.shan" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/4.huff" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/4.huff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/4.lz7710" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/4.lz7710" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/4.lz7720" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/4.lz7720" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/4.lz775" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/4.lz775" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/4.shan" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/4.shan" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/5.huff" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/5.huff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/5.lz7710" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/5.lz7710" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/5.lz7720" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/5.lz7720" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/5.lz775" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/5.lz775" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/5.shan" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/5.shan" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/6.huff" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/6.huff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/6.lz7710" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/6.lz7710" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/6.lz7720" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/6.lz7720" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/6.lz775" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/6.lz775" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/6.shan" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/6.shan" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeCXXCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeRCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeSystem.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CompilerIdC/a.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CompilerIdCXX/a.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/KDZ.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/KDZ.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/KDZ.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/KDZ.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/KDZ.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/KDZ.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/KDZ.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/KDZ.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/KDZ.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/KDZ.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/KDZ.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/KDZ.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/KDZ.dir/linklibs.rsp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/KDZ.dir/linklibs.rsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/KDZ.dir/main.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/KDZ.dir/main.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/KDZ.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/KDZ.dir/objects.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/DATA/1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/DATA/1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/DATA/2.docx" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/DATA/2.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/DATA/3.pptx" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/DATA/3.pptx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/DATA/4.png" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/DATA/4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/DATA/5.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/DATA/5.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/DATA/6.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/DATA/6.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/KDZ.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/KDZ.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/KDZ.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/KDZ.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RESULTH/1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/RESULTH/1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RESULTH/2.docx" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/RESULTH/2.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RESULTH/3.pptx" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/RESULTH/3.pptx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RESULTH/4.png" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/RESULTH/4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RESULTH/5.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/RESULTH/5.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RESULTH/6.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/RESULTH/6.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RESULTLZ7710/1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/RESULTLZ7710/1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RESULTLZ7710/2.docx" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/RESULTLZ7710/2.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RESULTLZ7710/3.pptx" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/RESULTLZ7710/3.pptx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RESULTLZ7710/4.png" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/RESULTLZ7710/4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RESULTLZ7710/5.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/RESULTLZ7710/5.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RESULTLZ7710/6.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/RESULTLZ7710/6.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RESULTLZ7720/1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/RESULTLZ7720/1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RESULTLZ7720/2.docx" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/RESULTLZ7720/2.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RESULTLZ7720/3.pptx" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/RESULTLZ7720/3.pptx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RESULTLZ7720/4.png" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/RESULTLZ7720/4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RESULTLZ7720/5.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/RESULTLZ7720/5.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RESULTLZ7720/6.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/RESULTLZ7720/6.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RESULTLZ775/1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/RESULTLZ775/1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RESULTLZ775/2.docx" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/RESULTLZ775/2.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RESULTLZ775/3.pptx" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/RESULTLZ775/3.pptx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RESULTLZ775/4.png" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/RESULTLZ775/4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RESULTLZ775/5.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/RESULTLZ775/5.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RESULTLZ775/6.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/RESULTLZ775/6.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RESULTSHF/1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/RESULTSHF/1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RESULTSHF/2.docx" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/RESULTSHF/2.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RESULTSHF/3.pptx" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/RESULTSHF/3.pptx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RESULTSHF/4.png" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/RESULTSHF/4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RESULTSHF/5.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/RESULTSHF/5.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RESULTSHF/6.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/RESULTSHF/6.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/input.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/inputlz.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/output1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/output1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/output2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/output2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/output3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/output3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/output4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/output4.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/output5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/output5.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/output6.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/output6.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Отчет.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Таблицы и графики.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,10 +164,19 @@
     <option name="formatViaClangd" value="false" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1ZqPthQ84pfyZchmoRFc9vuxXa9" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../contest_empty" />
+    <property name="cf.first.check.clang-format" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -33,21 +184,15 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Institute\algo\KDZ" />
+    </key>
   </component>
   <component name="RunManager">
-    <configuration name="KDZ" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="KDZ" TARGET_NAME="KDZ" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="KDZ" RUN_TARGET_NAME="KDZ">
+    <configuration name="KDZ" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="KDZ" TARGET_NAME="KDZ" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="KDZ" RUN_TARGET_NAME="KDZ">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -65,10 +210,71 @@
       <updated>1585563866657</updated>
       <workItem from="1585563869084" duration="181704000" />
       <workItem from="1586356470490" duration="24000" />
+      <workItem from="1586624988570" duration="2617000" />
+      <workItem from="1589560827484" duration="5565000" />
+      <workItem from="1589654935579" duration="9254000" />
+      <workItem from="1591088657796" duration="90000" />
+      <workItem from="1591093476617" duration="592000" />
+      <workItem from="1591632947145" duration="34000" />
+      <workItem from="1591633055865" duration="11000" />
+      <workItem from="1591633139586" duration="844000" />
+      <workItem from="1591704609602" duration="3282000" />
+      <workItem from="1594140999653" duration="978000" />
+      <workItem from="1594207547815" duration="9114000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1236" height="118" key="GridCell.Tab.0.bottom" timestamp="1594890331089">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state width="1236" height="118" key="GridCell.Tab.0.bottom/0.0.1280.720@0.0.1280.720" timestamp="1594890331089" />
+    <state width="1236" height="118" key="GridCell.Tab.0.center" timestamp="1594890331089">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state width="1236" height="118" key="GridCell.Tab.0.center/0.0.1280.720@0.0.1280.720" timestamp="1594890331089" />
+    <state width="1236" height="118" key="GridCell.Tab.0.left" timestamp="1594890331089">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state width="1236" height="118" key="GridCell.Tab.0.left/0.0.1280.720@0.0.1280.720" timestamp="1594890331089" />
+    <state width="1236" height="118" key="GridCell.Tab.0.right" timestamp="1594890331089">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state width="1236" height="118" key="GridCell.Tab.0.right/0.0.1280.720@0.0.1280.720" timestamp="1594890331089" />
+    <state width="1236" height="118" key="GridCell.Tab.1.bottom" timestamp="1594890331089">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state width="1236" height="118" key="GridCell.Tab.1.bottom/0.0.1280.720@0.0.1280.720" timestamp="1594890331089" />
+    <state width="1236" height="118" key="GridCell.Tab.1.center" timestamp="1594890331089">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state width="1236" height="118" key="GridCell.Tab.1.center/0.0.1280.720@0.0.1280.720" timestamp="1594890331089" />
+    <state width="1236" height="118" key="GridCell.Tab.1.left" timestamp="1594890331089">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state width="1236" height="118" key="GridCell.Tab.1.left/0.0.1280.720@0.0.1280.720" timestamp="1594890331089" />
+    <state width="1236" height="118" key="GridCell.Tab.1.right" timestamp="1594890331089">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state width="1236" height="118" key="GridCell.Tab.1.right/0.0.1280.720@0.0.1280.720" timestamp="1594890331089" />
+    <state x="104" y="0" key="SettingsEditor" timestamp="1594208994734">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="104" y="0" key="SettingsEditor/0.0.1280.720@0.0.1280.720" timestamp="1594208994734" />
   </component>
 </project>

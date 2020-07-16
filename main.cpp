@@ -6,12 +6,11 @@
 #include <sstream>
 #include <bitset>
 #include <chrono>
-#include "ShannonFano.h"
-#include "LZ77.h"
-#include "Huffman.h"
-
-//Строка для вывода результатов опыта
-string experiment_result;
+#include "ShannonFano.cpp"
+#include "LZ77.cpp"
+#include <thread>
+#include "LZW.cpp"
+#include "Huffman.cpp"
 
 //Создание вспомогательного массива для
 //алгоритма Кнута-Мориса-Пратта
@@ -29,7 +28,6 @@ void decompress_SHF_or_H(string& inFileName, string& outFileName);
 
 //Метод сжатия по алгоритму Хафмена
 void compress_H(string& inFileName, string& outFileName);
-
 
 //Метод сжатия по алгоритму LZ77
 //Размер скользящего окна 5 Кб, размер словаря 4 Кб архивированный
@@ -76,63 +74,61 @@ void getStringForEncode(string& encode, string* code,
                         unsigned long long int* bit_count);
 
 //Поиск энтропии файла
-void findEntropy(string* fileName);
+void findEntropy(string* fileName, string& experiment_result);
 
 //Поиск коэффициентов сжатия
-void findCompressionRatio(string inpitFile, string cFile);
+void findCompressionRatio(const string& inputFile, string cFile, string& experiment_result);
 
 //Посчитать всю информацию для одного файла
 void makeSingleExperement(string inputFileName, string compress1, string compress2,
                           string compress3, string compress4, string compress5, string res1, string res2,
                           string res3, string res4, string res5);
 
-void printResults(string fileName);
-
+void printResults(const string& fileName, string& experiment_result);
 
 int main()
 {
-    makeSingleExperement("DATA/1.txt", "1.shan", "1.lz775",
-        "1.lz7710", "1.lz7720", "1.huff", "RESULTSHF/1.txt",
-        "RESULTLZ775/1.txt","RESULTLZ7710/1.txt",
-        "RESULTLZ7720/1.txt", "RESULTH/1.txt");
+    thread thread1(&makeSingleExperement, "DATA/1.txt", "1.shan", "1.lz775",
+                      "1.lz7710", "1.lz7720", "1.huff", "RESULTSHF/1.txt",
+                      "RESULTLZ775/1.txt","RESULTLZ7710/1.txt",
+                      "RESULTLZ7720/1.txt", "RESULTH/1.txt");
 
-    printResults("output1.txt");
+    thread thread2(&makeSingleExperement, "DATA/2.docx", "2.shan", "2.lz775",
+                   "2.lz7710", "2.lz7720", "2.huff", "RESULTSHF/2.docx",
+                   "RESULTLZ775/2.docx","RESULTLZ7710/2.docx",
+                   "RESULTLZ7720/2.docx", "RESULTH/2.docx");
 
-    makeSingleExperement("DATA/2.docx", "2.shan", "2.lz775",
-         "2.lz7710", "2.lz7720", "2.huff", "RESULTSHF/2.docx",
-         "RESULTLZ775/2.docx","RESULTLZ7710/2.docx",
-         "RESULTLZ7720/2.docx", "RESULTH/2.docx");
+    thread thread3(&makeSingleExperement, "DATA/3.pptx", "3.shan", "3.lz775",
+                   "3.lz7710", "3.lz7720", "3.huff", "RESULTSHF/3.pptx",
+                   "RESULTLZ775/3.pptx","RESULTLZ7710/3.pptx",
+                   "RESULTLZ7720/3.pptx", "RESULTH/3.pptx");
 
-    printResults("output2.txt");
+    thread thread4(&makeSingleExperement, "DATA/4.png", "4.shan", "4.lz775",
+                   "4.lz7710", "4.lz7720", "4.huff", "RESULTSHF/4.png",
+                   "RESULTLZ775/4.png","RESULTLZ7710/4.png",
+                   "RESULTLZ7720/4.png", "RESULTH/4.png");
 
-    makeSingleExperement("DATA/3.pptx", "3.shan", "3.lz775",
-         "3.lz7710", "3.lz7720", "3.huff", "RESULTSHF/3.pptx",
-         "RESULTLZ775/3.pptx","RESULTLZ7710/3.pptx",
-         "RESULTLZ7720/3.pptx", "RESULTH/3.pptx");
+    thread thread5(&makeSingleExperement, "DATA/5.pdf", "5.shan", "5.lz775",
+                   "5.lz7710", "5.lz7720", "5.huff", "RESULTSHF/5.pdf",
+                   "RESULTLZ775/5.pdf","RESULTLZ7710/5.pdf",
+                   "RESULTLZ7720/5.pdf", "RESULTH/5.pdf");
 
-    printResults("output3.txt");
+    thread thread6(&makeSingleExperement, "DATA/6.xlsx", "6.shan", "6.lz775",
+                   "6.lz7710", "6.lz7720", "6.huff", "RESULTSHF/6.xlsx",
+                   "RESULTLZ775/6.xlsx","RESULTLZ7710/6.xlsx",
+                   "RESULTLZ7720/6.xlsx", "RESULTH/6.xlsx");
+    thread thread7(&makeSingleExperement, "DATA/7.bmp", "7.shan", "7.lz775",
+                   "7.lz7710", "7.lz7720", "7.huff", "RESULTSHF/7.bmp",
+                   "RESULTLZ775/7.bmp","RESULTLZ7710/7.bmp",
+                   "RESULTLZ7720/7.bmp", "RESULTH/7.bmp");
 
-    makeSingleExperement("DATA/4.png", "4.shan", "4.lz775",
-         "4.lz7710", "4.lz7720", "4.huff", "RESULTSHF/4.png",
-         "RESULTLZ775/4.png","RESULTLZ7710/4.png",
-         "RESULTLZ7720/4.png", "RESULTH/4.png");
-
-    printResults("output4.txt");
-
-    makeSingleExperement("DATA/5.pdf", "5.shan", "5.lz775",
-       "5.lz7710", "5.lz7720", "5.huff", "RESULTSHF/5.pdf",
-       "RESULTLZ775/5.pdf","RESULTLZ7710/5.pdf",
-       "RESULTLZ7720/5.pdf", "RESULTH/5.pdf");
-
-    printResults("output5.txt");
-
-    makeSingleExperement("DATA/6.xlsx", "6.shan", "6.lz775",
-         "6.lz7710", "6.lz7720", "6.huff", "RESULTSHF/6.xlsx",
-         "RESULTLZ775/6.xlsx","RESULTLZ7710/6.xlsx",
-         "RESULTLZ7720/6.xlsx", "RESULTH/6.xlsx");
-
-
-    printResults("output6.txt");
+    thread1.join();
+    thread2.join();
+    thread3.join();
+    thread4.join();
+    thread5.join();
+    thread6.join();
+    thread7.join();
 
     return 0;
 }
@@ -142,131 +138,107 @@ void makeSingleExperement(string inputFileName, string compress1, string compres
         string res3, string res4, string res5)
 {
     if(checkFile(&inputFileName)){
-        experiment_result += "______________________________________________\n";
-        experiment_result += "Эксперемент над файлом " + inputFileName + '\n';
-        findEntropy(&inputFileName);
+
+        //Строка для вывода результатов опыта
+        string experiment_result = "Эксперемент над файлом " + inputFileName + '\n';
+        findEntropy(&inputFileName, experiment_result);
 
         chrono::steady_clock::time_point duration1;
         chrono::steady_clock::time_point duration2;
-        chrono::duration<double> diff;
+        chrono::duration<double> diff{};
 
         experiment_result += "\nВремя сжатия для Шенона-Фано\n";
-//        for(int i = 0; i < 10; ++i)
-//        {
-            duration1 = chrono::steady_clock::now();
-            compress_SH_F(inputFileName, compress1);
-            duration2 = chrono::steady_clock::now();
-            diff = duration2 - duration1;
-            experiment_result += to_string((unsigned long long int)(diff.count() * 1000000000)) + '\n';
-//        }
-//
+        duration1 = chrono::steady_clock::now();
+        compress_SH_F(inputFileName, compress1);
+        duration2 = chrono::steady_clock::now();
+        diff = duration2 - duration1;
+        experiment_result += to_string(diff.count()) + '\n';
+
         experiment_result += "\nВремя распаковки для Шенона-Фано\n";
-//        for(int i = 0; i < 10; ++i)
-//        {
-            duration1 = chrono::steady_clock::now();
-            decompress_SHF_or_H(compress1, res1);
-            duration2 = chrono::steady_clock::now();
-            diff = duration2 - duration1;
-            experiment_result += to_string((unsigned long long int)(diff.count() * 1000000000)) + '\n';
-//        }
+        duration1 = chrono::steady_clock::now();
+        decompress_SHF_or_H(compress1, res1);
+        duration2 = chrono::steady_clock::now();
+        diff = duration2 - duration1;
+        experiment_result += to_string(diff.count()) + '\n';
 
         experiment_result += "\nВремя сжатия для Хафмена\n";
-//        for(int i = 0; i < 10; ++i)
-//        {
-            duration1 = chrono::steady_clock::now();
-            compress_H(inputFileName, compress5);
-            duration2 = chrono::steady_clock::now();
-            diff = duration2 - duration1;
-            experiment_result += to_string((unsigned long long int)(diff.count() * 1000000000)) + '\n';
-//        }
+        duration1 = chrono::steady_clock::now();
+        compress_H(inputFileName, compress5);
+        duration2 = chrono::steady_clock::now();
+        diff = duration2 - duration1;
+        experiment_result += to_string(diff.count()) + '\n';
 
         experiment_result += "\nВремя распаковки для Хафмена\n";
-//        for(int i = 0; i < 10; ++i)
-//        {
-            duration1 = chrono::steady_clock::now();
-            decompress_SHF_or_H(compress5, res5);
-            duration2 = chrono::steady_clock::now();
-            diff = duration2 - duration1;
-            experiment_result += to_string((unsigned long long int)(diff.count() * 1000000000)) + '\n';
-//        }
+        duration1 = chrono::steady_clock::now();
+        decompress_SHF_or_H(compress5, res5);
+        duration2 = chrono::steady_clock::now();
+        diff = duration2 - duration1;
+        experiment_result += to_string(diff.count()) + '\n';
 
         experiment_result += "\nВремя сжатия для LZ77_5\n";
-//        for(int i = 0; i < 10; ++i)
-//        {
-            duration1 = chrono::steady_clock::now();
-            compress_LZ77(inputFileName, compress2, 4096, 1024);
-            duration2 = chrono::steady_clock::now();
-            diff = duration2 - duration1;
-            experiment_result += to_string((unsigned long long int)(diff.count() * 1000000000)) + '\n';
-//        }
+        duration1 = chrono::steady_clock::now();
+        compress_LZ77(inputFileName, compress2, 4096, 1024);
+        duration2 = chrono::steady_clock::now();
+        diff = duration2 - duration1;
+        experiment_result += to_string(diff.count()) + '\n';
 
         experiment_result += "\nВремя распаковки для LZ77_5\n";
-//        for(int i = 0; i < 10; ++i)
-//        {
-            duration1 = chrono::steady_clock::now();
-            decompress_LZ77(compress2, res2);
-            duration2 = chrono::steady_clock::now();
-            diff = duration2 - duration1;
-            experiment_result += to_string((unsigned long long int)(diff.count() * 1000000000)) + '\n';
-//        }
+        duration1 = chrono::steady_clock::now();
+        decompress_LZ77(compress2, res2);
+        duration2 = chrono::steady_clock::now();
+        diff = duration2 - duration1;
+        experiment_result += to_string(diff.count()) + '\n';
 
         experiment_result += "\nВремя сжатия для LZ77_10\n";
-//        for(int i = 0; i < 10; ++i)
-//        {
-            duration1 = chrono::steady_clock::now();
-            compress_LZ77(inputFileName, compress3, 8192, 2048);
-            duration2 = chrono::steady_clock::now();
-            diff = duration2 - duration1;
-            experiment_result += to_string((unsigned long long int)(diff.count() * 1000000000)) + '\n';
-//        }
+        duration1 = chrono::steady_clock::now();
+        compress_LZ77(inputFileName, compress3, 8192, 2048);
+        duration2 = chrono::steady_clock::now();
+        diff = duration2 - duration1;
+        experiment_result += to_string(diff.count()) + '\n';
 
         experiment_result += "\nВремя распаковки для LZ77_10\n";
-//        for(int i = 0; i < 10; ++i)
-//        {
-            duration1 = chrono::steady_clock::now();
-            decompress_LZ77(compress3, res3);
-            duration2 = chrono::steady_clock::now();
-            diff = duration2 - duration1;
-            experiment_result += to_string((unsigned long long int)(diff.count() * 1000000000)) + '\n';
-//        }
+        duration1 = chrono::steady_clock::now();
+        decompress_LZ77(compress3, res3);
+        duration2 = chrono::steady_clock::now();
+        diff = duration2 - duration1;
+        experiment_result += to_string(diff.count()) + '\n';
 
         experiment_result += "\nВремя сжатия для LZ77_20\n";
-//        for(int i = 0; i < 10; ++i)
-//        {
-            duration1 = chrono::steady_clock::now();
-            compress_LZ77(inputFileName, compress4, 16384, 4096);
-            duration2 = chrono::steady_clock::now();
-            diff = duration2 - duration1;
-            experiment_result += to_string((unsigned long long int)(diff.count() * 1000000000)) + '\n';
-//        }
+        duration1 = chrono::steady_clock::now();
+        compress_LZ77(inputFileName, compress4, 16384, 4096);
+        duration2 = chrono::steady_clock::now();
+        diff = duration2 - duration1;
+        experiment_result += to_string(diff.count()) + '\n';
 
         experiment_result += "\nВремя распаковки для LZ77_20\n";
-//        for(int i = 0; i < 10; ++i)
-//        {
-            duration1 = chrono::steady_clock::now();
-            decompress_LZ77(compress4, res4);
-            duration2 = chrono::steady_clock::now();
-            diff = duration2 - duration1;
-            experiment_result += to_string((unsigned long long int)(diff.count() * 1000000000)) + '\n';
-//        }
+        duration1 = chrono::steady_clock::now();
+        decompress_LZ77(compress4, res4);
+        duration2 = chrono::steady_clock::now();
+        diff = duration2 - duration1;
+        experiment_result += to_string(diff.count()) + '\n';
         experiment_result += '\n';
 
-        findCompressionRatio(inputFileName, compress1);
-        findCompressionRatio(inputFileName, compress2);
-        findCompressionRatio(inputFileName, compress3);
-        findCompressionRatio(inputFileName, compress4);
-        findCompressionRatio(inputFileName, compress5);
+        findCompressionRatio(inputFileName, compress1, experiment_result);
+        findCompressionRatio(inputFileName, compress2, experiment_result);
+        findCompressionRatio(inputFileName, compress3, experiment_result);
+        findCompressionRatio(inputFileName, compress4, experiment_result);
+        findCompressionRatio(inputFileName, compress5, experiment_result);
 
-        experiment_result += '\n';
+        string number;
+        for(char item : inputFileName)
+            if(item >= '0' && item <= '9')
+                number += item;
+
+        printResults("output" + number + ".txt", experiment_result);
     }else{
         cout << "file " + inputFileName + " not founded\n";
     }
 }
 
-void findCompressionRatio(string inpitFile, string cFile)
+void findCompressionRatio(const string& inputFile, string cFile, string& experiment_result)
 {
     ifstream input_file_stream1;
-    input_file_stream1.open(inpitFile, ios::binary);
+    input_file_stream1.open(inputFile, ios::binary);
     string input1((istreambuf_iterator<char>(input_file_stream1)),
                  (istreambuf_iterator<char>()));
 
@@ -302,10 +274,13 @@ bool checkFile(string* filePath)
 {
     ifstream file;
     file.open(*filePath);
-    if (file.is_open())
+    if (file.is_open()){
+        file.close();
         return true;
-    file.close();
-    return false;
+    } else {
+        file.close();
+        return false;
+    }
 }
 
 void getSubstrings(string* source, string substring, int& res)
@@ -319,14 +294,13 @@ void getSubstrings(string* source, string substring, int& res)
             count = p[count - 1];
 
         if (substring[count] == (*source)[i])
-            count++;
+            ++count;
 
         if (count == substring.length())
         {
             res = i - (int) substring.length() + 1;
             delete[] p;
             return;
-//            count = p[count - 1];
         }
     }
 }
@@ -351,43 +325,48 @@ int* pi(string str)
     return pi;
 }
 
-void findEntropy(string* fileName)
+void findEntropy(string* fileName, string& experiment_result)
 {
     ifstream input_file_stream;
     input_file_stream.open(*fileName, ios::binary);
     map<unsigned char, unsigned long long int> count;
     string input((istreambuf_iterator<char>(input_file_stream)),
                  (istreambuf_iterator<char>()));
+
     get_counts(&input, count);
+
     double res = 0;
+    unsigned long long int count_of_symbols = 0;
     for(auto it = count.begin(); it != count.end(); ++it)
-    {
-        res += it->second * log2(it->second);
-    }
+        count_of_symbols += it->second;
+
+    for(auto it = count.begin(); it != count.end(); ++it)
+        res += (double)it->second / (double)count_of_symbols
+                * log2((double)it->second / (double)count_of_symbols);
     res = -res;
     experiment_result += "Энтропия файла - " + to_string(res) + '\n';
-    experiment_result += "Символ:\tЧастота:\n";
+    experiment_result += "Символ:\tКол-во в файле:\n";
+
     map<unsigned char, unsigned long long int>::iterator it;
     for(int i = 0; i < 256; ++i)
     {
         it = count.find((unsigned char)i);
         if (it != count.end()){
-            experiment_result += to_string(it->first) + "\t" + to_string(it->second) + '\n';
+            experiment_result += to_string(it->first) + "\t"
+                    + to_string(it->second) + '\n';
         }else{
             experiment_result += to_string(i) + "\t" + '0' + '\n';
         }
     }
-    experiment_result += '\n';
     input_file_stream.close();
 }
 
-void printResults(string fileName)
+void printResults(const string& fileName, string& experiment_result)
 {
     ofstream output_file_stream;
-    output_file_stream.open("fileName.txt", ios::binary);
+    output_file_stream.open(fileName, ios::binary);
     output_file_stream << experiment_result;
     output_file_stream.close();
-    experiment_result = "";
 }
 
 void makeMapForEncode(map<unsigned char, string>& _map,
@@ -427,7 +406,8 @@ void getEncodedString(string& temp, string& output,
     for(unsigned long long int i = 0; i < encode.size(); ++i)
     {
         temp += encode[i];
-        if ((*_map).find(temp) != (*_map).end()) {
+        if ((*_map).find(temp) != (*_map).end())
+        {
             output += (*_map)[temp];
             temp = "";
         }
@@ -468,7 +448,7 @@ void writeMapToString(map<unsigned char, string>* _map, string& output)
     output += to_string((*_map).size()) + ">=";
     for (auto it = (*_map).begin(); it != (*_map).end(); ++it)
     {
-        output += it->first ;
+        output += it->first;
         output += ">=" + it->second + ">=";
     }
     output += "<<";
@@ -639,7 +619,6 @@ void compress_H(string& inFileName, string& outFileName)
     makeMapForEncode(_map, &counts_vec, &counts, &huff);
     writeMapToString(&_map, output);
 
-
     for(int i = 0; i < input.size(); ++i)
         compress += _map[input[i]];
 
@@ -666,21 +645,21 @@ void compress_LZ77(string& inFileName, string& outFileName,
     string input((istreambuf_iterator<char>(input_file_stream)),
                  (istreambuf_iterator<char>()));
 
-    vector<Node*> result_nodes;
+    vector<LZ77::Node*> result_nodes;
     LZ77 _LZ77;
     _LZ77.encode(input, result_nodes, Buffer_Story_Length, Buffer_Pre_Length);
-//    _LZ77.lz77(input, result_nodes, Buffer_Story_Length, Buffer_Pre_Length);
+
     string output = to_string(result_nodes.size()) + ' ';
     for (int i = 0; i < result_nodes.size(); ++i)
-    {
         output += to_string(result_nodes[i]->offset) + " "
                   + to_string(result_nodes[i]->length) + " "
                   + result_nodes[i]->ch + " ";
-    }
 
     output_file_stream << output;
     input_file_stream.close();
     output_file_stream.close();
+    result_nodes.clear();
+    result_nodes.shrink_to_fit();
 }
 
 void decompress_LZ77(string& inFileName, string& outFileName)
@@ -696,4 +675,6 @@ void decompress_LZ77(string& inFileName, string& outFileName)
     LZ77 _LZ77;
     output = _LZ77.decode(&input_file_stream);
     output_file_stream << output;
+    input_file_stream.close();
+    output_file_stream.close();
 }

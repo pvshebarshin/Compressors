@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Institute/algo/KDZ/main.cpp" "C:/Institute/algo/KDZ/cmake-build-debug/CMakeFiles/KDZ.dir/main.cpp.obj"
+  "C:/Projects/Compression/Compressors/main.cpp" "C:/Projects/Compression/Compressors/cmake-build-debug/CMakeFiles/KDZ.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
