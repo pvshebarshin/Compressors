@@ -4,8 +4,9 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include "AlphabetConstructor.h"
 
-class Huffman
+class Huffman : public AlphabetConstructor
 {
 
 private:
@@ -25,19 +26,21 @@ private:
 public:
 
     // зупскает алгоритм (после того как были добавлены все элементы)
-    void build();
+    void build() override;
 
     // добавляет элемент в список (дерево, все зависит от реализации)
-    void addChance (int chance);
+    void addChance (int chance) override;
 
     // выдает битовый код i символа
-    string get (int i);
+    string get (int i) override;
 
     Node* huffmanTree(int length);
 
     void traverse(Node* root, string &s);
 
-    ~Huffman();
+    ~Huffman() override;
+
+    Huffman() = default;
 
 };
 

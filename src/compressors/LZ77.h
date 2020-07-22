@@ -2,6 +2,7 @@
 #define LZ77_H
 
 #include <vector>
+#include <fstream>
 using namespace std;
 
 class LZ77
@@ -16,7 +17,7 @@ private:
 
     //Создание вспомогательного массива для
     //алгоритма Кнута-Мориса-Пратта
-    static int *pi(string str);
+    static int* pi(string str);
 
     //Поиск подстроки в строке по алгоритму Кнута-Мориса-Пратта
     void getSubstrings(const string &source, const string &find);
