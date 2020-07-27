@@ -1,3 +1,0 @@
-C:/Projects/Compression/Compressors/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Projects/Compression/Compressors/cmake-build-debug/CMakeFiles/KDZ.dir
-C:/Projects/Compression/Compressors/cmake-build-debug/CMakeFiles/rebuild_cache.dir
