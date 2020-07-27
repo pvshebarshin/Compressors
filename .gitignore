@@ -4,6 +4,5 @@ CMakeLists.txt
 /cmake-build-debug/CMakeFiles
 /cmake-build-debug/CMakeFiles/*
 /cmake-build-debug/*
-!*.txt
-!CMakeCache.txt
+!/cmake-build-debug/output*.txt
 !/cmake-build-debug/DATA/
