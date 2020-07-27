@@ -1,1 +1,9 @@
-/*.txt
+/\.idea
+/\.idea/*
+CMakeLists.txt
+/cmake-build-debug/CMakeFiles
+/cmake-build-debug/CMakeFiles/*
+/cmake-build-debug/*
+!*.txt
+!CMakeCache.txt
+!/cmake-build-debug/DATA/
