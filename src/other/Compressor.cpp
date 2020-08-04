@@ -1,6 +1,6 @@
 #include "Compressor.h"
 
-void Compressor::findCompressionRatio(const string& inputFile, string cFile, string& experiment_result)
+void Compressor::findCompressionRatio(const string& inputFile, string cFile, string& experiment_result) const
 {
     ifstream input_file_stream1;
     input_file_stream1.open(inputFile, ios::binary);
@@ -29,7 +29,7 @@ void Compressor::findCompressionRatio(const string& inputFile, string cFile, str
     input_file_stream2.close();
 }
 
-void Compressor::findEntropy(string* fileName, string& experiment_result)
+void Compressor::findEntropy(const string* fileName, string& experiment_result) const
 {
     ifstream input_file_stream;
     input_file_stream.open(*fileName, ios::binary);
@@ -65,7 +65,7 @@ void Compressor::findEntropy(string* fileName, string& experiment_result)
     input_file_stream.close();
 }
 
-bool Compressor::checkFile(string* filePath)
+bool Compressor::checkFile(const string* filePath) const noexcept
 {
     ifstream file;
     file.open(*filePath);
@@ -78,7 +78,7 @@ bool Compressor::checkFile(string* filePath)
     }
 }
 
-Compressor::~Compressor()
+Compressor::~Compressor() noexcept
 {
     delete this->support;
     delete this->huffman;
@@ -86,7 +86,7 @@ Compressor::~Compressor()
     delete this->lz77;
 }
 
-Compressor::Compressor()
+Compressor::Compressor() noexcept
 {
     this->support = new Support();
     this->huffman = new Huffman();
@@ -94,7 +94,7 @@ Compressor::Compressor()
     this->lz77 = new LZ77();
 }
 
-void Compressor::compress_SH_F(string& inFileName, string& outFileName)
+void Compressor::compress_SH_F(const string& inFileName, const string& outFileName)
 {
     ifstream input_file_stream;
     input_file_stream.open(inFileName, ios::binary);
@@ -145,7 +145,7 @@ void Compressor::compress_SH_F(string& inFileName, string& outFileName)
     refreshSH_F();
 }
 
-void Compressor::decompress_SHF_or_H(string &inFileName, string &outFileName)
+void Compressor::decompress_SHF_or_H(const string &inFileName, const string &outFileName)
 {
     ifstream input_file_stream;
     input_file_stream.open(inFileName, ios::binary);
@@ -206,7 +206,7 @@ void Compressor::decompress_SHF_or_H(string &inFileName, string &outFileName)
     output_file_stream.close();
 }
 
-void Compressor::compress_H(string& inFileName, string& outFileName)
+void Compressor::compress_H(const string& inFileName, const string& outFileName)
 {
     ifstream input_file_stream;
     input_file_stream.open(inFileName, ios::binary);
@@ -256,7 +256,7 @@ void Compressor::compress_H(string& inFileName, string& outFileName)
     refreshH();
 }
 
-void Compressor::compress_LZ77(string &inFileName, string &outFileName,
+void Compressor::compress_LZ77(const string &inFileName, const string &outFileName,
         int Buffer_Story_Length, int Buffer_Pre_Length)
 {
     ifstream input_file_stream;
@@ -281,9 +281,10 @@ void Compressor::compress_LZ77(string &inFileName, string &outFileName,
     output_file_stream.close();
     result_nodes.clear();
     result_nodes.shrink_to_fit();
+    refreshLZ77();
 }
 
-void Compressor::decompress_LZ77(string &inFileName, string &outFileName)
+void Compressor::decompress_LZ77(const string &inFileName, const string &outFileName)
 {
     ifstream input_file_stream;
     input_file_stream.open(inFileName, ios::binary);
@@ -307,4 +308,30 @@ void Compressor::refreshSH_F()
 {
     delete this->shannonFano;
     this->shannonFano = new ShannonFano();
+}
+
+void Compressor::compress_LZ77_H(const string &inFileName, const string &outFileName1, const string &outFileName2,
+                            int Buffer_Story_Length, int Buffer_Pre_Length)
+{
+    this->compress_LZ77(inFileName, outFileName1, Buffer_Story_Length, Buffer_Pre_Length);
+    this->compress_H(outFileName1, outFileName2);
+}
+
+void Compressor::decompress_LZ77_H_or_LZ77_SH_F(const string &inFileName, const string &outFileName1, const string& outFileName2)
+{
+    this->decompress_SHF_or_H(inFileName, outFileName1);
+    this->decompress_LZ77(outFileName1, outFileName2);
+}
+
+void Compressor::compress_LZ77_SH_F(const string &inFileName, const string &outFileName1, const string &outFileName2,
+                                    int Buffer_Story_Length, int Buffer_Pre_Length)
+{
+    this->compress_LZ77(inFileName, outFileName1, Buffer_Story_Length, Buffer_Pre_Length);
+    this->compress_SH_F(outFileName1, outFileName2);
+}
+
+void Compressor::refreshLZ77()
+{
+    delete this->lz77;
+    this->lz77 = new LZ77();
 }
