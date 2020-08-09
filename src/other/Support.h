@@ -33,7 +33,7 @@ public:
                           map<string, unsigned char>& _map);
 
     //Получить строчку для декодирования из 0 и 1
-    void getStringForEncode(string& encode, string* code, uint64_t* bit_count);
+    void getStringForEncode(string& encode, string* code, const uint64_t* bit_count);
 
     //Декодирование строки из 0 и 1
     void getEncodedString(string& temp, string& output,

@@ -19,60 +19,60 @@ void printResults(const string& fileName, string& experiment_result);
 
 int main()
 {
-//    thread thread1(&makeSingleExperement, "../data/DATA/1.txt", "../data/1.shan", "../data/1.lz775",
-//                      "../data/1.lz7710", "../data/1.lz7720", "../data/1.huff", "../data/1.lz775h",
-//                      "../data/1.lz7710h", "../data/1.lz7720h", "../data/1.lz775sh_f",
-//                      "../data/1.lz7710sh_f", "../data/1.lz7720sh_f",
-//                      "../data/RESULTSHF/1.txt", "../data/RESULTLZ775/1.txt","../data/RESULTLZ7710/1.txt",
-//                      "../data/RESULTLZ7720/1.txt", "../data/RESULTH/1.txt", "../data/RESULTLZ775H/1.txt",
-//                      "../data/RESULTLZ7710H/1.txt", "../data/RESULTLZ7720H/1.txt",
-//                      "../data/RESULTLZ775SHF/1.txt", "../data/RESULTLZ7710SHF/1.txt",
-//                      "../data/RESULTLZ7720SHF/1.txt");
-//
-//    thread thread2(&makeSingleExperement, "../data/DATA/2.docx", "../data/2.shan", "../data/2.lz775",
-//                   "../data/2.lz7710", "../data/2.lz7720", "../data/2.huff", "../data/2.lz775h",
-//                   "../data/2.lz7710h", "../data/2.lz7720h", "../data/2.lz775sh_f", "../data/2.lz7710sh_f",
-//                   "../data/2.lz7720sh_f", "../data/RESULTSHF/2.docx", "../data/RESULTLZ775/2.docx",
-//                   "../data/RESULTLZ7710/2.docx", "../data/RESULTLZ7720/2.docx", "../data/RESULTH/2.docx",
-//                   "../data/RESULTLZ775H/2.docx", "../data/RESULTLZ7710H/2.docx",
-//                   "../data/RESULTLZ7720H/2.docx", "../data/RESULTLZ775SHF/2.docx",
-//                   "../data/RESULTLZ7710SHF/2.docx", "../data/RESULTLZ7720SHF/2.docx");
-//
-//    thread thread3(&makeSingleExperement, "../data/DATA/3.pptx", "../data/3.shan", "../data/3.lz775",
-//                   "../data/3.lz7710", "../data/3.lz7720", "../data/3.huff", "../data/3.lz775h",
-//                   "../data/3.lz7710h", "../data/3.lz7720h", "../data/3.lz775sh_f", "../data/3.lz7710sh_f",
-//                   "../data/3.lz7720sh_f", "../data/RESULTSHF/3.pptx", "../data/RESULTLZ775/3.pptx",
-//                   "../data/RESULTLZ7710/3.pptx", "../data/RESULTLZ7720/3.pptx", "../data/RESULTH/3.pptx",
-//                   "../data/RESULTLZ775H/3.pptx", "../data/RESULTLZ7710H/3.pptx",
-//                   "../data/RESULTLZ7720H/3.pptx", "../data/RESULTLZ775SHF/3.pptx",
-//                   "../data/RESULTLZ7710SHF/3.pptx", "../data/RESULTLZ7720SHF/3.pptx");
-//
-//    thread thread4(&makeSingleExperement, "../data/DATA/4.png", "../data/4.shan", "../data/4.lz775",
-//                   "../data/4.lz7710", "../data/4.lz7720", "../data/4.huff", "../data/4.lz775h",
-//                   "../data/4.lz7710h", "../data/4.lz7720h", "../data/4.lz775sh_f", "../data/4.lz7710sh_f",
-//                   "../data/4.lz7720sh_f", "../data/RESULTSHF/4.png", "../data/RESULTLZ775/4.png",
-//                   "../data/RESULTLZ7710/4.png", "../data/RESULTLZ7720/4.png", "../data/RESULTH/4.png",
-//                   "../data/RESULTLZ775H/4.png", "../data/RESULTLZ7710H/4.png",
-//                   "../data/RESULTLZ7720H/4.png", "../data/RESULTLZ775SHF/4.png",
-//                   "../data/RESULTLZ7710SHF/4.png", "../data/RESULTLZ7720SHF/4.png");
-//
-//    thread thread5(&makeSingleExperement, "../data/DATA/5.pdf", "../data/5.shan", "../data/5.lz775",
-//                   "../data/5.lz7710", "../data/5.lz7720", "../data/5.huff", "../data/5.lz775h",
-//                   "../data/5.lz7710h", "../data/5.lz7720h", "../data/5.lz775sh_f", "../data/5.lz7710sh_f",
-//                   "../data/5.lz7720sh_f", "../data/RESULTSHF/5.pdf", "../data/RESULTLZ775/5.pdf",
-//                   "../data/RESULTLZ7710/5.pdf", "../data/RESULTLZ7720/5.pdf", "../data/RESULTH/5.pdf",
-//                   "../data/RESULTLZ775H/5.pdf", "../data/RESULTLZ7710H/5.pdf",
-//                   "../data/RESULTLZ7720H/5.pdf", "../data/RESULTLZ775SHF/5.pdf",
-//                   "../data/RESULTLZ7710SHF/5.pdf", "../data/RESULTLZ7720SHF/5.pdf");
-//
-//    thread thread6(&makeSingleExperement, "../data/DATA/6.xlsx", "../data/6.shan", "../data/6.lz775",
-//                   "../data/6.lz7710", "../data/6.lz7720", "../data/6.huff", "../data/6.lz775h",
-//                   "../data/6.lz7710h", "../data/6.lz7720h", "../data/6.lz775sh_f", "../data/6.lz7710sh_f",
-//                   "../data/6.lz7720sh_f", "../data/RESULTSHF/6.xlsx", "../data/RESULTLZ775/6.xlsx",
-//                   "../data/RESULTLZ7710/6.xlsx", "../data/RESULTLZ7720/6.xlsx", "../data/RESULTH/6.xlsx",
-//                   "../data/RESULTLZ775H/6.xlsx", "../data/RESULTLZ7710H/6.xlsx",
-//                   "../data/RESULTLZ7720H/6.xlsx", "../data/RESULTLZ775SHF/6.xlsx",
-//                   "../data/RESULTLZ7710SHF/6.xlsx", "../data/RESULTLZ7720SHF/6.xlsx");
+    thread thread1(&makeSingleExperement, "../data/DATA/1.txt", "../data/1.shan", "../data/1.lz775",
+                      "../data/1.lz7710", "../data/1.lz7720", "../data/1.huff", "../data/1.lz775h",
+                      "../data/1.lz7710h", "../data/1.lz7720h", "../data/1.lz775sh_f",
+                      "../data/1.lz7710sh_f", "../data/1.lz7720sh_f",
+                      "../data/RESULTSHF/1.txt", "../data/RESULTLZ775/1.txt","../data/RESULTLZ7710/1.txt",
+                      "../data/RESULTLZ7720/1.txt", "../data/RESULTH/1.txt", "../data/RESULTLZ775H/1.txt",
+                      "../data/RESULTLZ7710H/1.txt", "../data/RESULTLZ7720H/1.txt",
+                      "../data/RESULTLZ775SHF/1.txt", "../data/RESULTLZ7710SHF/1.txt",
+                      "../data/RESULTLZ7720SHF/1.txt");
+
+    thread thread2(&makeSingleExperement, "../data/DATA/2.docx", "../data/2.shan", "../data/2.lz775",
+                   "../data/2.lz7710", "../data/2.lz7720", "../data/2.huff", "../data/2.lz775h",
+                   "../data/2.lz7710h", "../data/2.lz7720h", "../data/2.lz775sh_f", "../data/2.lz7710sh_f",
+                   "../data/2.lz7720sh_f", "../data/RESULTSHF/2.docx", "../data/RESULTLZ775/2.docx",
+                   "../data/RESULTLZ7710/2.docx", "../data/RESULTLZ7720/2.docx", "../data/RESULTH/2.docx",
+                   "../data/RESULTLZ775H/2.docx", "../data/RESULTLZ7710H/2.docx",
+                   "../data/RESULTLZ7720H/2.docx", "../data/RESULTLZ775SHF/2.docx",
+                   "../data/RESULTLZ7710SHF/2.docx", "../data/RESULTLZ7720SHF/2.docx");
+
+    thread thread3(&makeSingleExperement, "../data/DATA/3.pptx", "../data/3.shan", "../data/3.lz775",
+                   "../data/3.lz7710", "../data/3.lz7720", "../data/3.huff", "../data/3.lz775h",
+                   "../data/3.lz7710h", "../data/3.lz7720h", "../data/3.lz775sh_f", "../data/3.lz7710sh_f",
+                   "../data/3.lz7720sh_f", "../data/RESULTSHF/3.pptx", "../data/RESULTLZ775/3.pptx",
+                   "../data/RESULTLZ7710/3.pptx", "../data/RESULTLZ7720/3.pptx", "../data/RESULTH/3.pptx",
+                   "../data/RESULTLZ775H/3.pptx", "../data/RESULTLZ7710H/3.pptx",
+                   "../data/RESULTLZ7720H/3.pptx", "../data/RESULTLZ775SHF/3.pptx",
+                   "../data/RESULTLZ7710SHF/3.pptx", "../data/RESULTLZ7720SHF/3.pptx");
+
+    thread thread4(&makeSingleExperement, "../data/DATA/4.png", "../data/4.shan", "../data/4.lz775",
+                   "../data/4.lz7710", "../data/4.lz7720", "../data/4.huff", "../data/4.lz775h",
+                   "../data/4.lz7710h", "../data/4.lz7720h", "../data/4.lz775sh_f", "../data/4.lz7710sh_f",
+                   "../data/4.lz7720sh_f", "../data/RESULTSHF/4.png", "../data/RESULTLZ775/4.png",
+                   "../data/RESULTLZ7710/4.png", "../data/RESULTLZ7720/4.png", "../data/RESULTH/4.png",
+                   "../data/RESULTLZ775H/4.png", "../data/RESULTLZ7710H/4.png",
+                   "../data/RESULTLZ7720H/4.png", "../data/RESULTLZ775SHF/4.png",
+                   "../data/RESULTLZ7710SHF/4.png", "../data/RESULTLZ7720SHF/4.png");
+
+    thread thread5(&makeSingleExperement, "../data/DATA/5.pdf", "../data/5.shan", "../data/5.lz775",
+                   "../data/5.lz7710", "../data/5.lz7720", "../data/5.huff", "../data/5.lz775h",
+                   "../data/5.lz7710h", "../data/5.lz7720h", "../data/5.lz775sh_f", "../data/5.lz7710sh_f",
+                   "../data/5.lz7720sh_f", "../data/RESULTSHF/5.pdf", "../data/RESULTLZ775/5.pdf",
+                   "../data/RESULTLZ7710/5.pdf", "../data/RESULTLZ7720/5.pdf", "../data/RESULTH/5.pdf",
+                   "../data/RESULTLZ775H/5.pdf", "../data/RESULTLZ7710H/5.pdf",
+                   "../data/RESULTLZ7720H/5.pdf", "../data/RESULTLZ775SHF/5.pdf",
+                   "../data/RESULTLZ7710SHF/5.pdf", "../data/RESULTLZ7720SHF/5.pdf");
+
+    thread thread6(&makeSingleExperement, "../data/DATA/6.xlsx", "../data/6.shan", "../data/6.lz775",
+                   "../data/6.lz7710", "../data/6.lz7720", "../data/6.huff", "../data/6.lz775h",
+                   "../data/6.lz7710h", "../data/6.lz7720h", "../data/6.lz775sh_f", "../data/6.lz7710sh_f",
+                   "../data/6.lz7720sh_f", "../data/RESULTSHF/6.xlsx", "../data/RESULTLZ775/6.xlsx",
+                   "../data/RESULTLZ7710/6.xlsx", "../data/RESULTLZ7720/6.xlsx", "../data/RESULTH/6.xlsx",
+                   "../data/RESULTLZ775H/6.xlsx", "../data/RESULTLZ7710H/6.xlsx",
+                   "../data/RESULTLZ7720H/6.xlsx", "../data/RESULTLZ775SHF/6.xlsx",
+                   "../data/RESULTLZ7710SHF/6.xlsx", "../data/RESULTLZ7720SHF/6.xlsx");
 
     thread thread7(&makeSingleExperement, "../data/DATA/7.bmp", "../data/7.shan", "../data/7.lz775",
                    "../data/7.lz7710", "../data/7.lz7720", "../data/7.huff", "../data/7.lz775h",
@@ -83,12 +83,12 @@ int main()
                    "../data/RESULTLZ7720H/7.bmp", "../data/RESULTLZ775SHF/7.bmp",
                    "../data/RESULTLZ7710SHF/7.bmp", "../data/RESULTLZ7720SHF/7.bmp");
 
-//    thread1.join();
-//    thread2.join();
-//    thread3.join();
-//    thread4.join();
-//    thread5.join();
-//    thread6.join();
+    thread1.join();
+    thread2.join();
+    thread3.join();
+    thread4.join();
+    thread5.join();
+    thread6.join();
     thread7.join();
 
     return 0;

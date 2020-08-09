@@ -106,10 +106,10 @@ void Support::makeMapForDecode(string &temp, string &temp_string, unsigned char 
         _map.insert(make_pair(s_vec[i], uc_vec[i]));
 }
 
-void Support::getStringForEncode(string& encode, string* code, uint64_t *bit_count)
+void Support::getStringForEncode(string& encode, string* code, const uint64_t *bit_count)
 {
-    for(uint64_t i = 0; i < (*code).size(); ++i)
-        encode += bitset<8>((*code)[i]).to_string();
+    for(char i : *code)
+        encode += bitset<8>(i).to_string();
     encode = encode.substr(0, *bit_count);
 }
 
@@ -117,9 +117,9 @@ void Support::getEncodedString(string &temp, string &output,
         string &encode, map<string, unsigned char> *_map)
 {
     temp = "";
-    for(uint64_t i = 0; i < encode.size(); ++i)
+    for(char i : encode)
     {
-        temp += encode[i];
+        temp += i;
         if ((*_map).find(temp) != (*_map).end())
         {
             output += (*_map)[temp];
@@ -132,8 +132,8 @@ void Support::makeMapForEncode(map<unsigned char, string> &_map,
                vector<pair<uint64_t , unsigned char>> *counts_vec,
                map<unsigned char, uint64_t> *counts, AlphabetConstructor* *algo) noexcept
 {
-    for(auto it = (*counts).begin(); it != (*counts).end(); ++it)
+    for(auto& it : *counts)
         for(int i = 0; i < (*counts_vec).size(); ++i)
-            if((*counts_vec)[i].first == it->second)
+            if((*counts_vec)[i].first == it.second)
                 _map.insert(make_pair((*counts_vec)[i].second, (*algo)->get(i)));
 }

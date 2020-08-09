@@ -52,11 +52,11 @@ public:
 
 private:
 
-    LZ77* lz77;
-    AlphabetConstructor* shannonFano;
-    AlphabetConstructor* huffman;
+    LZ77* lz77 = nullptr;
+    AlphabetConstructor* shannonFano = nullptr;
+    AlphabetConstructor* huffman = nullptr;
 
-    Support* support;
+    Support* support = nullptr;
 
     //Обновление компрессора для Ш_Ф
     void refreshSH_F() noexcept;
@@ -66,6 +66,9 @@ private:
 
     //Обновление компрессора для LZ77
     void refreshLZ77() noexcept;
+
+    //Обновление компрессора для LZW
+    void refreshLZW() noexcept;
 
 };
 
