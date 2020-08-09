@@ -42,10 +42,10 @@ public:
     void decompress_LZ77_H_or_LZ77_SH_F(const string& inFileName, const string& outFileName1, const string& outFileName2);
 
     //Поиск коэффициентов сжатия
-    void findCompressionRatio(const string& inputFile, string cFile, string& experiment_result) const;
+    void findCompressionRatio(const string& inputFile, string cFile, string& experiment_result) const noexcept;
 
     //Поиск энтропии файла
-    void findEntropy(const string* fileName, string& experiment_result) const;
+    void findEntropy(const string* fileName, string& experiment_result) const noexcept;
 
     //Проверка существования файла
     bool checkFile(const string* filePath) const noexcept;
@@ -59,13 +59,13 @@ private:
     Support* support;
 
     //Обновление компрессора для Ш_Ф
-    void refreshSH_F();
+    void refreshSH_F() noexcept;
 
     //Обновление компрессора для Х
-    void refreshH();
+    void refreshH() noexcept;
 
     //Обновление компрессора для LZ77
-    void refreshLZ77();
+    void refreshLZ77() noexcept;
 
 };
 
