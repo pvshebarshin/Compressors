@@ -4,6 +4,11 @@
 #include <sstream>
 #include <bitset>
 #include <map>
+#include "../compressors/AlphabetConstructor.h"
+#include <vector>
+
+
+using namespace std;
 
 class Support
 {

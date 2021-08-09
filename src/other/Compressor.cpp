@@ -272,7 +272,7 @@ void Compressor::compress_H(const string& inFileName, const string& outFileName)
 }
 
 void Compressor::compress_LZ77(const string &inFileName, const string &outFileName,
-        int Buffer_Story_Length, int Buffer_Pre_Length)
+                               int Buffer_Story_Length, int Buffer_Pre_Length)
 {
     if(this->checkFile(&inFileName))
     {
@@ -332,7 +332,7 @@ void Compressor::refreshSH_F() noexcept
 }
 
 void Compressor::compress_LZ77_H(const string &inFileName, const string &outFileName1, const string &outFileName2,
-                            int Buffer_Story_Length, int Buffer_Pre_Length)
+                                 int Buffer_Story_Length, int Buffer_Pre_Length)
 {
     if(this->checkFile(&inFileName))
     {

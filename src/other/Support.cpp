@@ -114,7 +114,7 @@ void Support::getStringForEncode(string& encode, string* code, const uint64_t *b
 }
 
 void Support::getEncodedString(string &temp, string &output,
-        string &encode, map<string, unsigned char> *_map)
+                               string &encode, map<string, unsigned char> *_map)
 {
     temp = "";
     for(char i : encode)
@@ -129,8 +129,8 @@ void Support::getEncodedString(string &temp, string &output,
 }
 
 void Support::makeMapForEncode(map<unsigned char, string> &_map,
-               vector<pair<uint64_t , unsigned char>> *counts_vec,
-               map<unsigned char, uint64_t> *counts, AlphabetConstructor* *algo) noexcept
+                               vector<pair<uint64_t , unsigned char>> *counts_vec,
+                               map<unsigned char, uint64_t> *counts, AlphabetConstructor* *algo) noexcept
 {
     for(auto& it : *counts)
         for(int i = 0; i < (*counts_vec).size(); ++i)

@@ -2,7 +2,7 @@
 
 void Huffman::build()
 {
-    string s;
+    std::string s;
     traverse(huffmanTree(row.size()), s);
 }
 
@@ -14,7 +14,7 @@ void Huffman::addChance(int chance)
     row.push_back(node);
 }
 
-string Huffman::get(int i)
+std::string Huffman::get(int i)
 {
     return row[i]->code;
 }
@@ -25,7 +25,7 @@ Huffman::~Huffman()
         delete row[i];
 }
 
-void Huffman::traverse(Huffman::Node *root, string &s)
+void Huffman::traverse(Huffman::Node *root, std::string &s)
 {
     if (root->left && root->right){
 
@@ -63,7 +63,7 @@ Huffman::Node *Huffman::huffmanTree(int length) {
                 break;
             }
     }
-    
+
     return huffmanTree(length - 1);
 }
 

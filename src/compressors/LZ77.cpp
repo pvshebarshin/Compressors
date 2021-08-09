@@ -1,6 +1,6 @@
 #include "LZ77.h"
 
-int *LZ77::pi(string str)
+int *LZ77::pi(std::string str)
 {
     int i;
     int n = str.length();
@@ -21,7 +21,7 @@ int *LZ77::pi(string str)
     return bp;
 }
 
-void LZ77::getSubstrings(const string &source, const string &find)
+void LZ77::getSubstrings(const std::string &source, const std::string &find)
 {
     int pozition = 0;
     length = 0;
@@ -49,10 +49,10 @@ void LZ77::getSubstrings(const string &source, const string &find)
     delete br;
 }
 
-string LZ77::find_reminder(string &str, int count)
+std::string LZ77::find_reminder(std::string &str, int count)
 {
     int k = 0;
-    string res = "";
+    std::string res = "";
     for(int i = 0; i < count; ++i, ++k)
         if (k < str.size()){
             res += str[k];
@@ -63,7 +63,7 @@ string LZ77::find_reminder(string &str, int count)
     return res;
 }
 
-void LZ77::take_value_from_file(string *input, int &help_index, string &temp)
+void LZ77::take_value_from_file(std::string *input, int &help_index, std::string &temp)
 {
     while((*input)[help_index] != ' ')
     {
@@ -73,12 +73,11 @@ void LZ77::take_value_from_file(string *input, int &help_index, string &temp)
     ++help_index;
 }
 
-string LZ77::decode(ifstream *fin)
+std::string LZ77::decode(std::ifstream *fin)
 {
     int help_index = 0;
-    string temp;
-    string input((istreambuf_iterator<char>(*fin)),
-                 (istreambuf_iterator<char>()));
+    std::string temp;
+    std::string input((std::istreambuf_iterator<char>(*fin)),(std::istreambuf_iterator<char>()));
 
     take_value_from_file(&input, help_index, temp);
 
@@ -86,8 +85,8 @@ string LZ77::decode(ifstream *fin)
     int index;
     int count_of_char;
     char ch;
-    string res;
-    string help_str;
+    std::string res;
+    std::string help_str;
 
     count = stoi(temp);
     temp = "";
@@ -119,16 +118,16 @@ string LZ77::decode(ifstream *fin)
     }
     return res;}
 
-void LZ77::encode(string &buffer, vector<Node *> &result_nodes,
-        int Buffer_Story_Length, int Buffer_Pre_Length)
+void LZ77::encode(std::string &buffer, std::vector<Node *> &result_nodes,
+                  int Buffer_Story_Length, int Buffer_Pre_Length)
 {
     bufferBackstoryLength = Buffer_Story_Length;
     bufferPreviewLength = Buffer_Pre_Length;
     while (buffer.size() > position)
     {
         getSubstrings(buffer.substr(border,
-                    bufferPreviewLength + position - border),
-                    buffer.substr(position, bufferPreviewLength));
+                                    bufferPreviewLength + position - border),
+                      buffer.substr(position, bufferPreviewLength));
 
         position += length + 1;
 

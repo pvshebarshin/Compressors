@@ -18,10 +18,10 @@ private:
         Node *right;
         int value;
         int index;
-        string code;
+        std::string code;
     };
 
-    vector<Node*> row;
+    std::vector<Node*> row;
 
 public:
 
@@ -32,11 +32,11 @@ public:
     void addChance (int chance) override;
 
     // выдает битовый код i символа
-    string get (int i) override;
+    std::string get (int i) override;
 
     Node* huffmanTree(int length);
 
-    void traverse(Node* root, string &s);
+    void traverse(Node* root, std::string &s);
 
     ~Huffman() override;
 

@@ -1,7 +1,10 @@
 #ifndef COMPRESSOR_H
 #define COMPRESSOR_H
 
-#include "Support.cpp"
+#include "Support.h"
+#include "../compressors/LZ77.h"
+#include "../compressors/Huffman.h"
+#include "../compressors/ShannonFano.h"
 #include <cmath>
 #include <algorithm>
 
@@ -25,11 +28,11 @@ public:
     //Метод сжатия по алгоритму LZ77
     //Размер скользящего окна 5 Кб, размер словаря 4 Кб архивированный
     void compress_LZ77(const string& inFileName, const string& outFileName,
-                        int Buffer_Story_Length, int Buffer_Pre_Length);
+                       int Buffer_Story_Length, int Buffer_Pre_Length);
 
     //Метод сжатия по алгоритмам LZ77 и Хафмену
     void compress_LZ77_H(const string& inFileName, const string& outFileName1, const string& outFileName2,
-                        int Buffer_Story_Length, int Buffer_Pre_Length);
+                         int Buffer_Story_Length, int Buffer_Pre_Length);
 
     //Метод сжатия по алгоритмам LZ77 и Шенону-Фано
     void compress_LZ77_SH_F(const string& inFileName, const string& outFileName1, const string& outFileName2,
