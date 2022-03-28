@@ -2,7 +2,7 @@
 
 void Compressor::findCompressionRatio(const string& inputFile, string cFile, string& experiment_result) const noexcept
 {
-    if(this->checkFile(&inputFile) && this->checkFile(&cFile))
+    if (this->checkFile(&inputFile) && this->checkFile(&cFile))
     {
         ifstream input_file_stream1;
         input_file_stream1.open(inputFile, ios::binary);
@@ -25,7 +25,7 @@ void Compressor::findCompressionRatio(const string& inputFile, string cFile, str
             ++index;
         }
 
-        double ratio = (double)input2.size() / (double)input1.size();
+        double ratio = (double) input2.size() / (double) input1.size();
         experiment_result += "Коэффициен сжатия для " + type + " - " + to_string(ratio) + '\n';
         input_file_stream1.close();
         input_file_stream2.close();
@@ -34,7 +34,7 @@ void Compressor::findCompressionRatio(const string& inputFile, string cFile, str
 
 void Compressor::findEntropy(const string* fileName, string& experiment_result) const noexcept
 {
-    if(this->checkFile(&*fileName))
+    if (this->checkFile(&*fileName))
     {
         ifstream input_file_stream;
         input_file_stream.open(*fileName, ios::binary);
@@ -46,24 +46,24 @@ void Compressor::findEntropy(const string* fileName, string& experiment_result) 
 
         double res = 0;
         uint64_t count_of_symbols = 0;
-        for(auto it = count.begin(); it != count.end(); ++it)
+        for (auto it = count.begin(); it != count.end(); ++it)
             count_of_symbols += it->second;
 
-        for(auto it = count.begin(); it != count.end(); ++it)
-            res += (double)it->second / (double)count_of_symbols
-                   * log2((double)it->second / (double)count_of_symbols);
+        for (auto it = count.begin(); it != count.end(); ++it)
+            res += (double) it->second / (double) count_of_symbols
+                   * log2((double) it->second / (double) count_of_symbols);
         res = -res;
         experiment_result += "Энтропия файла - " + to_string(res) + '\n';
         experiment_result += "Символ:\tКол-во в файле:\n";
 
         map<unsigned char, uint64_t>::iterator it;
-        for(int i = 0; i < 256; ++i)
+        for (int i = 0; i < 256; ++i)
         {
-            it = count.find((unsigned char)i);
-            if (it != count.end()){
+            it = count.find((unsigned char) i);
+            if (it != count.end()) {
                 experiment_result += to_string(it->first) + "\t"
                                      + to_string(it->second) + '\n';
-            }else{
+            } else {
                 experiment_result += to_string(i) + "\t" + '0' + '\n';
             }
         }
@@ -75,7 +75,7 @@ bool Compressor::checkFile(const string* filePath) const noexcept
 {
     ifstream file;
     file.open(*filePath);
-    if (file.is_open()){
+    if (file.is_open()) {
         file.close();
         return true;
     } else {
@@ -102,8 +102,7 @@ Compressor::Compressor() noexcept
 
 void Compressor::compress_SH_F(const string& inFileName, const string& outFileName)
 {
-    if(this->checkFile(&inFileName))
-    {
+    if (this->checkFile(&inFileName)) {
         ifstream input_file_stream;
         input_file_stream.open(inFileName, ios::binary);
         ofstream output_file_stream;
@@ -118,8 +117,8 @@ void Compressor::compress_SH_F(const string& inFileName, const string& outFileNa
         support->get_counts(&input, counts);
 
         //Создание вектора для сортировки значений мапа
-        vector<pair<uint64_t , unsigned char>> counts_vec;
-        for(auto it = counts.begin(); it != counts.end(); ++it)
+        vector<pair<uint64_t, unsigned char>> counts_vec;
+        for (auto it = counts.begin(); it != counts.end(); ++it)
             counts_vec.push_back(make_pair(it->second, it->first));
 
         //Сортируем вектор по убыванию
@@ -127,7 +126,7 @@ void Compressor::compress_SH_F(const string& inFileName, const string& outFileNa
         reverse(begin(counts_vec), end(counts_vec));
 
         //Создание кода Шенона Фано
-        for(auto it = counts_vec.begin(); it != counts_vec.end(); ++it)
+        for (auto it = counts_vec.begin(); it != counts_vec.end(); ++it)
             this->shannonFano->addChance(it->first);
         this->shannonFano->build();
 
@@ -138,7 +137,7 @@ void Compressor::compress_SH_F(const string& inFileName, const string& outFileNa
         support->writeMapToString(&_map, output);
 
 
-        for(char i : input)
+        for (char i : input)
             compress += _map[i];
 
         //запись кол-ва битов исходного файла
@@ -154,10 +153,9 @@ void Compressor::compress_SH_F(const string& inFileName, const string& outFileNa
     }
 }
 
-void Compressor::decompress_SHF_or_H(const string &inFileName, const string &outFileName)
+void Compressor::decompress_SHF_or_H(const string& inFileName, const string& outFileName)
 {
-    if(this->checkFile(&inFileName))
-    {
+    if (this->checkFile(&inFileName)) {
         ifstream input_file_stream;
         input_file_stream.open(inFileName, ios::binary);
         ofstream output_file_stream;
@@ -171,7 +169,7 @@ void Compressor::decompress_SHF_or_H(const string &inFileName, const string &out
         int dictionary_count;
         uint64_t index = 0;
 
-        while(input[index] != '>')
+        while (input[index] != '>')
         {
             temp += input[index];
             ++index;
@@ -190,11 +188,11 @@ void Compressor::decompress_SHF_or_H(const string &inFileName, const string &out
         string token;
         index += temp_string.length() - 1;
 
-        support->makeMapForDecode(temp_string,temp,temp_char, _map);
+        support->makeMapForDecode(temp_string, temp, temp_char, _map);
 
         uint64_t bit_count;
         temp_string = "";
-        while(input[index] != '>')
+        while (input[index] != '>')
         {
             temp_string += input[index];
             ++index;
@@ -220,8 +218,7 @@ void Compressor::decompress_SHF_or_H(const string &inFileName, const string &out
 
 void Compressor::compress_H(const string& inFileName, const string& outFileName)
 {
-    if(this->checkFile(&inFileName))
-    {
+    if (this->checkFile(&inFileName)) {
         ifstream input_file_stream;
         input_file_stream.open(inFileName, ios::binary);
         ofstream output_file_stream;
@@ -236,8 +233,8 @@ void Compressor::compress_H(const string& inFileName, const string& outFileName)
         support->get_counts(&input, counts);
 
         //Создание вектора для сортировки значений мапа
-        vector<pair<uint64_t , unsigned char>> counts_vec;
-        for(auto it = counts.begin(); it != counts.end(); ++it)
+        vector<pair<uint64_t, unsigned char>> counts_vec;
+        for (auto it = counts.begin(); it != counts.end(); ++it)
             counts_vec.push_back(make_pair(it->second, it->first));
 
         //Сортируем вектор по убыванию
@@ -245,7 +242,7 @@ void Compressor::compress_H(const string& inFileName, const string& outFileName)
         reverse(begin(counts_vec), end(counts_vec));
 
         //Создание кода Хафмена
-        for(auto it = counts_vec.begin(); it != counts_vec.end(); ++it)
+        for (auto it = counts_vec.begin(); it != counts_vec.end(); ++it)
             this->huffman->addChance(it->first);
         this->huffman->build();
 
@@ -255,7 +252,7 @@ void Compressor::compress_H(const string& inFileName, const string& outFileName)
         support->makeMapForEncode(_map, &counts_vec, &counts, &this->huffman);
         support->writeMapToString(&_map, output);
 
-        for(char i : input)
+        for (char i : input)
             compress += _map[i];
 
         //запись кол-ва битов исходного файла
@@ -271,11 +268,10 @@ void Compressor::compress_H(const string& inFileName, const string& outFileName)
     }
 }
 
-void Compressor::compress_LZ77(const string &inFileName, const string &outFileName,
+void Compressor::compress_LZ77(const string& inFileName, const string& outFileName,
                                int Buffer_Story_Length, int Buffer_Pre_Length)
 {
-    if(this->checkFile(&inFileName))
-    {
+    if (this->checkFile(&inFileName)) {
         ifstream input_file_stream;
         input_file_stream.open(inFileName, ios::binary);
 
@@ -284,7 +280,7 @@ void Compressor::compress_LZ77(const string &inFileName, const string &outFileNa
         string input((istreambuf_iterator<char>(input_file_stream)),
                      (istreambuf_iterator<char>()));
 
-        vector<LZ77::Node*> result_nodes;
+        vector<LZ77::Node *> result_nodes;
         this->lz77->encode(input, result_nodes, Buffer_Story_Length, Buffer_Pre_Length);
 
         string output = to_string(result_nodes.size()) + ' ';
@@ -302,10 +298,9 @@ void Compressor::compress_LZ77(const string &inFileName, const string &outFileNa
     }
 }
 
-void Compressor::decompress_LZ77(const string &inFileName, const string &outFileName)
+void Compressor::decompress_LZ77(const string& inFileName, const string& outFileName)
 {
-    if(this->checkFile(&inFileName))
-    {
+    if (this->checkFile(&inFileName)) {
         ifstream input_file_stream;
         input_file_stream.open(inFileName, ios::binary);
 
@@ -331,29 +326,28 @@ void Compressor::refreshSH_F() noexcept
     this->shannonFano = new ShannonFano();
 }
 
-void Compressor::compress_LZ77_H(const string &inFileName, const string &outFileName1, const string &outFileName2,
+void Compressor::compress_LZ77_H(const string& inFileName, const string& outFileName1, const string& outFileName2,
                                  int Buffer_Story_Length, int Buffer_Pre_Length)
 {
-    if(this->checkFile(&inFileName))
-    {
+    if (this->checkFile(&inFileName)) {
         this->compress_LZ77(inFileName, outFileName1, Buffer_Story_Length, Buffer_Pre_Length);
         this->compress_H(outFileName1, outFileName2);
     }
 }
 
-void Compressor::decompress_LZ77_H_or_LZ77_SH_F(const string &inFileName, const string &outFileName1, const string& outFileName2)
+void Compressor::decompress_LZ77_H_or_LZ77_SH_F(const string& inFileName, const string& outFileName1,
+                                                const string& outFileName2)
 {
-    if(this->checkFile(&inFileName))
-    {
+    if (this->checkFile(&inFileName)) {
         this->decompress_SHF_or_H(inFileName, outFileName1);
         this->decompress_LZ77(outFileName1, outFileName2);
     }
 }
 
-void Compressor::compress_LZ77_SH_F(const string &inFileName, const string &outFileName1, const string &outFileName2,
+void Compressor::compress_LZ77_SH_F(const string& inFileName, const string& outFileName1, const string& outFileName2,
                                     int Buffer_Story_Length, int Buffer_Pre_Length)
 {
-    if(this->checkFile(&inFileName))
+    if (this->checkFile(&inFileName))
     {
         this->compress_LZ77(inFileName, outFileName1, Buffer_Story_Length, Buffer_Pre_Length);
         this->compress_SH_F(outFileName1, outFileName2);

@@ -20,7 +20,7 @@ private:
     static int* pi(std::string str);
 
     //Поиск подстроки в строке по алгоритму Кнута-Мориса-Пратта
-    void getSubstrings(const std::string &source, const std::string &find);
+    void getSubstrings(const std::string& source, const std::string& find);
 
     //Вспомогательный метод для поиска остатка строки, когда
     //offset < length

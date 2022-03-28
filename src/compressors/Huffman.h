@@ -14,8 +14,8 @@ private:
     class Node
     {
     public:
-        Node *left;
-        Node *right;
+        Node* left;
+        Node* right;
         int value;
         int index;
         std::string code;
@@ -29,14 +29,14 @@ public:
     void build() override;
 
     // добавляет элемент в список (дерево, все зависит от реализации)
-    void addChance (int chance) override;
+    void addChance(int chance) override;
 
     // выдает битовый код i символа
-    std::string get (int i) override;
+    std::string get(int i) override;
 
     Node* huffmanTree(int length);
 
-    void traverse(Node* root, std::string &s);
+    void traverse(Node* root, std::string& s);
 
     ~Huffman() override;
 

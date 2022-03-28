@@ -13,16 +13,16 @@ public:
     ~ShannonFano() override;
 
     //Реализация алгоритма
-    void fillTree(int *left, int *right, int sum);
+    void fillTree(int* left, int* right, int sum);
 
     // запускает алгоритм (после того как были добавлены все элементы)
     void build() override;
 
     // добавляет элемент в список
-    void addChance (int chance) override;
+    void addChance(int chance) override;
 
     // выдает битовый код i символа
-    std::string get (int i) override;
+    std::string get(int i) override;
 
 private:
     std::vector<int> chances;

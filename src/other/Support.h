@@ -19,9 +19,9 @@ public:
 
     //Создание вспомогательного map для кодирования
     void makeMapForEncode(map<unsigned char, string>& _map,
-                          vector<pair<uint64_t , unsigned char>>* counts_vec,
+                          vector<pair<uint64_t, unsigned char>>* counts_vec,
                           map<unsigned char, uint64_t>* counts,
-                          AlphabetConstructor* *algo) noexcept;
+                          AlphabetConstructor** algo) noexcept;
 
     //Запись map в строку
     void writeMapToString(map<unsigned char, string>* _map, string& output);
@@ -42,7 +42,7 @@ public:
 
     //Декодирование строки из 0 и 1
     void getEncodedString(string& temp, string& output,
-                          string& encode,map<string, unsigned char>* _map);
+                          string& encode, map<string, unsigned char>* _map);
 
 private:
 

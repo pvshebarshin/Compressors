@@ -42,10 +42,14 @@ public:
     void decompress_LZ77(const string& inFileName, const string& outFileName);
 
     //Метод распаковки LZ77 и Хафмена или LZ77 и Шенона-Фано
-    void decompress_LZ77_H_or_LZ77_SH_F(const string& inFileName, const string& outFileName1, const string& outFileName2);
+    void decompress_LZ77_H_or_LZ77_SH_F(const string& inFileName,
+                                        const string& outFileName1,
+                                        const string& outFileName2);
 
     //Поиск коэффициентов сжатия
-    void findCompressionRatio(const string& inputFile, string cFile, string& experiment_result) const noexcept;
+    void findCompressionRatio(const string& inputFile,
+                              string cFile,
+                              string& experiment_result) const noexcept;
 
     //Поиск энтропии файла
     void findEntropy(const string* fileName, string& experiment_result) const noexcept;
